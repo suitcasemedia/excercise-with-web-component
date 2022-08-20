@@ -1,0 +1,94 @@
+/* Remove list styles (bullets/numbers) */
+ol, ul, menu {
+    list-style: none;
+}
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+.logo{
+    margin: 20px;
+}
+* {
+    margin: 0;
+    padding: 0;
+    }
+li{
+    border-top: 0.5px solid #444;
+    padding : 1em 0;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column-gap: 1em;
+    grid-row-gap: 1em;
+  }
+  .comments{
+    grid-template-columns: repeat(12, 1fr);
+    grid-column-start: 2;
+    grid-column-end: 8;
+    grid-row-start:2;
+    border-top: 0.5px solid #444;
+    border-bottom: 0.5px solid #444;
+  }
+  .comments__head{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    padding: 20px 0px;
+  }
+  .comments__count{
+    grid-column-start: 1;
+    grid-column-end: 6;
+    font-size: 1.3em;
+    font-weight: bold;
+  }
+  .comments__filter{
+    justify-self: end;
+    grid-column: col 10/ span 2;
+  }
+  .comments__comment{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+  .comments__likes{
+    grid-column: col 10/ span 2;
+}
+.comments__username{
+    grid-column: span 12;
+    grid-row: 1;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+  .comments__text{
+    grid-column: span 10;
+    justify-self: start;
+    grid-row: 2 ;
+  }
+  .error{
+    color: red;
+    font-size: 1.5em;
+  }
+  button {
+    padding: 5px 20px;
+    margin-left: 5px;
+    border-radius: 15px;
+    background-color: white;
+  }
+  button:hover{
+    background-color: #ddd;
+  }
+  button.active{
+        background-color: #ccc;
+  }
+  @media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .comments{
+        grid-column: span 12;
+        padding: 10px;
+    }
+    .comments__likes{
+        grid-column: span 12;
+    }
+  }
