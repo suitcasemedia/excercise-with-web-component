@@ -60,22 +60,22 @@ class CommentsComponent extends HTMLElement {
             const filteredResponse = response.slice().sort((b, a) => a.likes - b.likes)
             const nonFilteredResponse = response
             const commentsHeaderOutput = 
-                `<div class="comments__head">
-                    <div class="comments__count">
+                `<div class="comments__head wrapper">
+                    <div class="comments__count cols-1-8">
                          <img src='./comment-icon.svg' width="15px" alt="comment icon" /> ${response && response.length} Comments
                     </div>
-                     <div class="comments__filter">
+                     <div class="comments__filter cols-10-12">
                         Sort <button class="${ this.filterByLikes && 'active'} " id="sortbylikes">Likes 
                     </div>
                 </div> `;
             const commentsOutput = (this.filterByLikes ? filteredResponse : nonFilteredResponse).map(comment => {
                 return `
-                        <li class="comments__comment">
-                            <div class="comments__username">${comment.name}</div>
-                            <div class="comments__text">
+                        <li class="wrapper comments_comment">
+                            <div class="comments__username cols-full-width">${comment.name}</div>
+                            <div class="comments__text cols-1-10">
                                 ${comment.body}
                             </div>
-                            <div class="comments__likes">
+                            <div class="comments__likes cols-10-12 sm-full-width">
                                 ${comment.likes} Likes
                             </div>
                         </li>`;
